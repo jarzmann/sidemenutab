@@ -22,6 +22,10 @@ const routes: Routes = [
     ],
   },
   {
+    path: 'login',
+    loadChildren: '../login/login.module#LoginPageModule'
+  },
+  {
     path: '',
     redirectTo: 'login',
     pathMatch: 'full'
