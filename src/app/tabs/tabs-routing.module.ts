@@ -1,10 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { TabsPage } from './tabs.page';
-import { AboutPage } from '../about/about.page';
-import { ContactPage } from '../contact/contact.page';
-import { AboutPageModule } from '../about/about.module';
-import { ContactPageModule } from '../contact/contact.module';
 
 const routes: Routes = [
   {
@@ -18,13 +14,23 @@ const routes: Routes = [
       {
         path: 'contact',
         loadChildren: '../contact/contact.module#ContactPageModule'
-      }
-    ]
-  }
+      },
+      {
+        path: 'home',
+        loadChildren: '../home/home.module#HomePageModule'
+      },
+    ],
+  },
+  {
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full'
+  },
+
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes), AboutPageModule, ContactPageModule],
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
 export class TabsRoutingModule {}

@@ -1,20 +1,57 @@
+<ion-app>
+    <ion-split-pane>
+      <ion-menu>
+        <ion-header>
+          <ion-toolbar>
+            <ion-title>Menu</ion-title>
+          </ion-toolbar>
+        </ion-header>
+        <ion-content>
+          <ion-list>
+            <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
+              <ion-item [routerDirection]="'root'" [routerLink]="[p.url]">
+                <ion-icon slot="start" [name]="p.icon"></ion-icon>
+                <ion-label>
+                  {{p.title}}
+                </ion-label>
+              </ion-item>
+            </ion-menu-toggle>
+          </ion-list>
+        </ion-content>
+      </ion-menu>
+      <ion-router-outlet main>
 
+      </ion-router-outlet>
 
-    <ion-tabs>
+    </ion-split-pane>
 
-      <ion-tab-bar slot="bottom">
+  </ion-app>
 
-      <ion-tab-button tab="about">
-        <ion-icon name="people"></ion-icon>
-        <ion-label>About</ion-label>
-      </ion-tab-button>
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="nearby">
+      <ion-icon name="compass"></ion-icon>
+      <ion-label>Nearby</ion-label>
+    </ion-tab-button>
 
-      <ion-tab-button tab="contact">
-        <ion-icon name="contact"></ion-icon>
-        <ion-label>Contact</ion-label>
-      </ion-tab-button>
+    <ion-tab-button tab="search">
+      <ion-icon name="search"></ion-icon>
+      <ion-label>Search</ion-label>
+    </ion-tab-button>
 
+    <ion-tab-button tab="profile">
+      <ion-icon name="contact"></ion-icon>
+      <ion-label>Me</ion-label>
+    </ion-tab-button>
 
-    </ion-tab-bar>
+    <ion-tab-button tab="activity">
+      <ion-icon name="hourglass"></ion-icon>
+      <ion-label>Activity</ion-label>
+    </ion-tab-button>
 
-  </ion-tabs>
+    <ion-tab-button tab="settings">
+      <ion-icon name="settings"></ion-icon>
+      <ion-label>settings</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuService } from '../services/menu.service';
 
 @Component({
   selector: 'app-tabs',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TabsPage implements OnInit {
 
-  constructor() { }
+  public appPages: any;
+
+  constructor(menu: MenuService) {
+    this.appPages = menu.appPages;
+  }
 
   ngOnInit() {
   }
